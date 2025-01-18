@@ -4,28 +4,69 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5%;
     overflow: auto;
+    margin: 10vh;
+    background-image: url(images/blue-brick-wall.webp);
 }
 
-.profile-picture {
-    margin-top: 2%;
+/*Classes*/
+.intro-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10vh;
+}
+/*TITLE*/
+.title-sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 1.75rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    width: 47rem;
+    animation: flicker 0.11s ease-in-out infinite alternate;    
 }
 
-.profile-picture img {
-    border-radius: 50%;
-    width: 140px;
-    height: 140px;
-    border: 3px solid #ffff;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s, transform 0.3s;
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 
+            0 0 5px #b3e5fc,
+            0 0 10px #b3e5fc,
+            0 0 20px #81d4fa,
+            0 0 30px #4fc3f7,
+            0 0 40px #29b6f6,
+            0 0 50px #0288d1,
+            0 0 75px #0277bd;
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
+
+.title-sign::before{
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    bottom: -6px;
+    left: -6px;
+    border: 0.2rem solid #fff; /* Neown glow */
+    border-radius: 2rem;
+    box-shadow: 
+    0 0 20px #81d4fa, 
+    0 0 40px #4fc3f7, 
+    0 0 80px #29b6f6;
+    z-index: -1;
 }
 
-.profile-picture img:hover {
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
-    transform: scale(1.05);
-}
+/*TITLE END*/
 
+/*INFO CARD*/
 .info-card {
     position: relative;
     background-color: #2C3E50; /* main box background */
@@ -53,7 +94,10 @@ body {
     opacity: 0; 
     transition: opacity 0.3s ease;
     border: 1px solid #A5F3C0; /* Neown glow */
-    box-shadow: 0 0 8px #A5F3C0, 0 0 17px #A5F3C0, 0 0 40px #A5F3C0, 0 0 60px #A5F3C0;
+    box-shadow: 
+    0 0 20px #00ffa3, 
+    0 0 40px #00d98c, 
+    0 0 80px #00b378;
 }
 
 .info-card:hover {
@@ -79,6 +123,24 @@ body {
     padding: 15px;
     position: relative;
     text-align: left;
+}
+
+.profile-picture {
+    margin-top: 2%;
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    border: 3px solid #ffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.profile-picture img:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
 }
 
 .buttons {
@@ -134,3 +196,5 @@ body {
     border-radius: 50%;
     border: 2px;
 }
+/*INFO CARD END*/
+/*SECTION 2*/
